@@ -6,12 +6,14 @@ import Logo from "components/logo";
 import LogoDark from "assets/logo.svg";
 import MobileDrawer from "./mobile-drawer";
 import menuItems from "./header.data";
+import menuItems2 from "./header.data2";
 
 export default function Header({ className }) {
   return (
     <header sx={styles.header} className={className} id="header">
       <Container sx={styles.container}>
         <Logo src={LogoDark} />
+        <MobileDrawer />
         <Flex as="nav" sx={styles.nav}>
           {menuItems.map((menuItem, i) => (
             <Link
@@ -27,14 +29,6 @@ export default function Header({ className }) {
             </Link>
           ))}
         </Flex>
-        {/* <Button
-          className="donate__btn"
-          variant="secondary"
-          aria-label="Get Started"
-        >
-          Get Started
-        </Button> */}
-        <MobileDrawer />
       </Container>
     </header>
   );
@@ -110,4 +104,10 @@ const styles = {
       },
     },
   },
+  // drawer: {
+  //   display: "3px solid blue",
+  //   "@media screen and (min-width: 1024px)": {
+  //     display: "none",
+  //   },
+  // },
 };
